@@ -464,7 +464,9 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
 
 - (void)applicationDidChangeStatusBarFrame:(NSNotification *)notification
 {
-    [self.navBarController expand];
+    if (self.scrollView.window) {
+        [self.navBarController expand];
+    }
 }
 
 @end
